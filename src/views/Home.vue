@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import ResultsCard from '../components/ResultsCard/ResultsCard.vue'
 import AppButton from '../components/AppButton/AppButton.vue'
 import SearchBar from '../components/SearchBar/SearchBar.vue'
+import ResultsCount from '../components/ResultsCount/ResultsCount.vue'
 
 const searchBooks = ref('')
 const searchResults = ref([])
@@ -23,11 +24,7 @@ async function getSearchResults() {
 
 <template>
   <SearchBar v-model="searchBooks" @set-search-value="getSearchResults"></SearchBar>
-  <div class="my-8">
-    <p v-if="searchResults.length > 0" class="font-inter font-semibold text-indigo-600 text-xl">
-      {{ searchResults.length }} results were found
-    </p>
-  </div>
+  <ResultsCount :resultsCount="searchResults.length"></ResultsCount>
   <ResultsCard
     v-for="result in searchResults" :key="result.id"
     :title="result.volumeInfo.title"
