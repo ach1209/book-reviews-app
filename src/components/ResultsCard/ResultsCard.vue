@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="flex">
+  <div class="flex border shadow p-4">
     <img :src="props.thumbnail" :alt="props.title" />
     <div class="w-full flex flex-col ml-4">
       <div>
