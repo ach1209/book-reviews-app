@@ -33,6 +33,8 @@ async function getSearchResults() {
     :description="result.searchInfo.textSnippet"
     class="mb-4"
   >
-    <AppButton btnType="results" class="mt-auto">See More Details</AppButton>
+    <router-link :to="{ name: 'Book', params: { id: result.volumeInfo.title.toLowerCase().replace(/[,\s]+|[,\s]+/g, '+') } }">
+      <AppButton btnType="results" class="mt-auto">See More Details</AppButton>  
+    </router-link>
   </ResultsCard>
 </template>
