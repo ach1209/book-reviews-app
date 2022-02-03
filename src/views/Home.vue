@@ -28,9 +28,8 @@ async function getSearchResults() {
   <ResultsCard
     v-for="result in searchResults" :key="result.id"
     :title="result.volumeInfo.title"
-    :thumbnail="result.volumeInfo.imageLinks.smallThumbnail"
-    :searchInfo="result.searchInfo"
-    :description="result.searchInfo.textSnippet"
+    :thumbnail="result.volumeInfo.imageLinks?.smallThumbnail"
+    :description="result.searchInfo?.textSnippet"
     class="mb-4"
   >
     <router-link :to="{ name: 'Book', params: { id: result.volumeInfo.title.toLowerCase().replace(/[,\s]+|[,\s]+/g, '+') } }">
