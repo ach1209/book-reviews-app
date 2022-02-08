@@ -26,7 +26,7 @@ const searchResults = computed(() => store.getAllSearchResults)
     :description="result.searchInfo?.textSnippet"
     class="mb-4"
   >
-    <router-link :to="{ name: 'Book', params: { id: result.volumeInfo.title.toLowerCase().replace(/[,\s]+|[,\s]+/g, '+') } }">
+    <router-link :to="{ name: 'Book', params: { id: result.volumeInfo.title.toLowerCase().replace(/[,\s]+|[,\s]+/g, '-') } }">
       <AppButton btnType="results" class="mt-auto">See More Details</AppButton>  
     </router-link>
   </ResultsCard>
