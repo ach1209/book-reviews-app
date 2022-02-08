@@ -1,10 +1,10 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { getResults } from '../store/getResults.js'
-import ResultsCard from '../components/ResultsCard/ResultsCard.vue'
 import AppButton from '../components/AppButton/AppButton.vue'
-import SearchBar from '../components/SearchBar/SearchBar.vue'
+import ResultsCard from '../components/ResultsCard/ResultsCard.vue'
 import ResultsCount from '../components/ResultsCount/ResultsCount.vue'
+import SearchBar from '../components/SearchBar/SearchBar.vue'
 
 const searchBooks = ref('')
 const store = getResults()
