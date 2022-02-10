@@ -10,10 +10,10 @@ function handleInput() {
 </script>
 
 <template>
-  <label for="search" class="font-inter text-sm">Please enter a title</label>
+  <label for="search" class="text-sm">Please enter a title</label>
   <input
     type="text" id="search" :value="props.modelValue"
     @input="$emit('update:modelValue', $event.target.value)"
     @keyup.native.enter="handleInput"
-    class="w-full h-12 px-2 rounded border border-indigo-500 bg-indigo-50 font-inter focus:outline-none" />
+    class="w-full h-12 px-2 rounded border border-indigo-500 bg-indigo-50 focus:outline-none" />
 </template>

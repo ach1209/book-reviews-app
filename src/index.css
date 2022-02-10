@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 @tailwind base;
+
+@layer base {
+  body {
+    @apply font-inter;
+  }
+
+  h1,
+  h2 {
+    @apply font-semibold text-2xl text-rose-600;
+  }
+
+  p {
+    @apply text-sm text-neutral-700;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;

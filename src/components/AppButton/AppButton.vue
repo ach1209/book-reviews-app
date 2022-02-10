@@ -12,7 +12,7 @@ const props = defineProps({
 
 <style scoped>
 .btn {
-  @apply block rounded px-4 py-2 shadow-sm hover:shadow-none font-inter font-semibold;
+  @apply block rounded px-4 py-2 shadow-sm hover:shadow-none font-semibold;
 }
 
 .results-btn {
