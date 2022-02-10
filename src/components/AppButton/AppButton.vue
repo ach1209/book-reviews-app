@@ -18,4 +18,8 @@ const props = defineProps({
 .results-btn {
   @apply bg-indigo-500 hover:bg-indigo-400 text-white;
 }
+
+.tab-btn {
+  @apply border-none shadow-none px-0 mr-4 last:mr-0 active:text-indigo-600 text-neutral-700;
+}
 </style>
