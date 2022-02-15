@@ -30,7 +30,7 @@ const details = computed(() => {
       <img :src="details.volumeInfo.imageLinks?.thumbnail" :alt="details.volumeInfo.title" />
     </div>
     <div class="flex-1 ml-4">
-      <h1>{{ details.volumeInfo.title }}</h1>
+      <h1 class="text-rose-600">{{ details.volumeInfo.title }}</h1>
       <span class="text-sm text-gray-500">Written by: {{ details.volumeInfo.authors[0] }}</span>
       <div class="flex">
         <AppButton 
