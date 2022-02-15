@@ -20,6 +20,10 @@ const props = defineProps({
 }
 
 .tab-btn {
-  @apply border-none shadow-none px-0 mr-4 last:mr-0 active:text-indigo-600 text-neutral-700;
+  @apply border-none shadow-none px-0 mr-4 last:mr-0 text-neutral-500 hover:text-sky-600 active:text-sky-600;
+}
+
+.active {
+  @apply text-sky-600;
 }
 </style>

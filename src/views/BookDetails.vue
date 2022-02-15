@@ -1,12 +1,23 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, shallowRef } from 'vue'
 import { useRoute } from 'vue-router'
 import { getResults } from '../store/getResults.js'
 import AppButton from '../components/AppButton/AppButton.vue'
 import BookOverview from '../components/BookOverview/BookOverview.vue'
+import BookReview from '../components/BookReview/BookReview.vue'
 
 const store = getResults()
 const route = useRoute()
+const currentTab = shallowRef(BookOverview)
+const tabs = [
+  { title: 'Overview', comp: BookOverview },
+  { title: 'Review', comp: BookReview }
+]
+
+function changeTab(tab) {
+  currentTab.value = tab
+  // console.log(currentTab.value)
+}
 
 const details = computed(() => {
   return store.getAllSearchResults.find(detail => detail.volumeInfo.title.toLowerCase().replace(/[,\s]+|[,\s]+/g, '-') === route.params.id)
@@ -14,7 +25,7 @@ const details = computed(() => {
 </script>
 
 <template>
-  <div class="flex items-center">
+  <div class="flex">
     <div>
       <img :src="details.volumeInfo.imageLinks?.thumbnail" :alt="details.volumeInfo.title" />
     </div>
@@ -22,17 +33,22 @@ const details = computed(() => {
       <h1>{{ details.volumeInfo.title }}</h1>
       <span class="text-sm text-gray-500">Written by: {{ details.volumeInfo.authors[0] }}</span>
       <div class="flex">
-        <AppButton btnType="tab">Overview</AppButton>
-        <AppButton btnType="tab">Reviews</AppButton>        
+        <AppButton 
+          v-for="tab in tabs" :key="tab.title"
+          :class="{ active: currentTab === tab.comp }"
+          @click="changeTab(tab.comp)"
+          btnType="tab"
+        >{{ tab.title }}</AppButton>
       </div>
-      <BookOverview
+      <component
+        :is="currentTab"
         :rating="details.volumeInfo.averageRating"
         :ratingCount="details.volumeInfo.ratingsCount"
         :pageCount="details.volumeInfo.pageCount"
         :publisher="details.volumeInfo.publisher"
         :isbnCode="details.volumeInfo.industryIdentifiers"
         :description="details.volumeInfo.description"
-      ></BookOverview>
+      />
     </div>
   </div>
 </template>
