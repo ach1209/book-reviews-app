@@ -10,7 +10,7 @@ const tabData = reactive([
 
 <template>
   <div class="w-2/12 lg:h-48 p-4 bg-white rounded-lg shadow-sm">
-    <h2 class="text-center">My Books</h2>
+    <h2 class="text-center text-rose-600">My Books</h2>
     <ul>
       <li v-for="tab in tabData" :key="tab.id">
         <router-link :to="tab.path">
