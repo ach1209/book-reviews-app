@@ -11,7 +11,7 @@ const route = useRoute()
 const currentTab = shallowRef(BookOverview)
 const tabs = [
   { title: 'Overview', comp: BookOverview },
-  { title: 'Review', comp: BookReview }
+  { title: 'Reviews', comp: BookReview }
 ]
 
 function changeTab(tab) {
