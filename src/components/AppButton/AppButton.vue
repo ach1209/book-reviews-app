@@ -5,7 +5,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <button class="btn" :class="`${props.btnType}-btn`">
+  <button class="btn" :class="[props.btnType ? `${props.btnType}-btn` : null]">
     <slot></slot>
   </button>
 </template>
@@ -15,15 +15,15 @@ const props = defineProps({
   @apply block rounded px-4 py-2 shadow-sm hover:shadow-none font-semibold;
 }
 
-.results-btn {
-  @apply bg-indigo-500 hover:bg-indigo-400 text-white;
+.primary-btn {
+  @apply bg-blue-600 hover:bg-blue-700 text-white;
 }
 
 .tab-btn {
-  @apply border-none shadow-none px-0 mr-4 last:mr-0 text-neutral-500 hover:text-sky-600 active:text-sky-600;
+  @apply border-none shadow-none px-0 mr-4 last:mr-0 text-neutral-500 hover:text-blue-600 active:text-blue-600;
 }
 
 .active {
-  @apply text-sky-600;
+  @apply text-blue-600;
 }
 </style>

@@ -11,7 +11,7 @@ const props = defineProps({
     <img :src="props.thumbnail" :alt="props.title" />
     <div class="w-full flex flex-col justify-between ml-4">
       <div>
-        <h2 class="text-rose-600">{{ props.title }}</h2>
+        <h2 class="text-blue-600">{{ props.title }}</h2>
         <p v-html="props.description"></p>        
       </div>
       <div class="flex justify-end">

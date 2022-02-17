@@ -30,7 +30,7 @@ const details = computed(() => {
       <img :src="details.volumeInfo.imageLinks?.thumbnail" :alt="details.volumeInfo.title" />
     </div>
     <div class="flex-1 ml-4">
-      <h1 class="text-rose-600">{{ details.volumeInfo.title }}</h1>
+      <h1 class="text-neutral-800">{{ details.volumeInfo.title }}</h1>
       <span class="text-sm text-gray-500">Written by: {{ details.volumeInfo.authors[0] }}</span>
       <div class="flex">
         <AppButton 
@@ -40,7 +40,7 @@ const details = computed(() => {
           btnType="tab"
         >{{ tab.title }}</AppButton>
       </div>
-      <component
+      <component v-if="currentTab === BookOverview"
         :is="currentTab"
         :rating="details.volumeInfo.averageRating"
         :ratingCount="details.volumeInfo.ratingsCount"
@@ -49,6 +49,7 @@ const details = computed(() => {
         :isbnCode="details.volumeInfo.industryIdentifiers"
         :description="details.volumeInfo.description"
       />
+      <component v-else :is="currentTab" />
     </div>
   </div>
 </template>
