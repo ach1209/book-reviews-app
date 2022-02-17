@@ -1,11 +1,9 @@
 <script setup>
-import { reactive } from 'vue'
-
-const tabData = reactive([
+const tabData = [
   { title: 'Home', id: 0, path: '/' },
-  { title: 'Completed', id: 1, path: '/completed' },
+  { title: 'Collections', id: 1, path: '/collections' },
   { title: 'Reviews', id: 2, path: '/reviews' }
-])
+]
 </script>
 
 <template>
