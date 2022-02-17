@@ -3,10 +3,10 @@ import { computed } from 'vue'
 import AppButton from '../AppButton/AppButton.vue'
 
 const props = defineProps({
-  rating: { type: Number, required: true },
-  ratingCount: { type: Number, required: true },
+  rating: { type: Number, required: true, default: 0 },
+  ratingCount: { type: Number, required: true, default: 0 },
   pageCount: { type: Number, required: true },
-  publisher: { type: String, required: true },
+  publisher: { type: String, required: false },
   isbnCode: { type: Array, required: true },
   description: { type: String, required: true, default: 'No description available' }
 })
