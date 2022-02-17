@@ -2,7 +2,7 @@
 const props = defineProps({
   title: { type: String, required: true },
   thumbnail: { type: String, required: true, default: 'https://placehold.co/120x150?text=No+Image+Available' },
-  description: { type: String, required: true }
+  description: { type: String, required: true, default: 'No description available' }
 })
 </script>
 
