@@ -9,7 +9,7 @@
 
   h1,
   h2 {
-    @apply font-semibold text-2xl;
+    @apply font-semibold text-xl;
   }
 
   p {
