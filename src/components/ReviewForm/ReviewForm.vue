@@ -1,16 +1,19 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, inject } from 'vue'
 import AppButton from '../AppButton/AppButton.vue'
 
 const isRecommended = ref('')
 const userReview = ref('')
 const reviewsList = []
+const bookId = inject('bookId')
 
 function formSubmitTest() {
   reviewsList.push(
     {
+      bookId: bookId,
+      reviewId: Math.random(), // remove in case it's not needed. maybe useful for reviews.vue
       recommended: isRecommended.value,
-      userReview: userReview.value
+      reviewText: userReview.value
     }
   )
   resetForm()

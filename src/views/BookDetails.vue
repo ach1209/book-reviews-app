@@ -1,5 +1,5 @@
 <script setup>
-import { computed, shallowRef } from 'vue'
+import { computed, shallowRef, provide } from 'vue'
 import { useRoute } from 'vue-router'
 import { getResults } from '../store/getResults.js'
 import AppButton from '../components/AppButton/AppButton.vue'
@@ -22,6 +22,9 @@ function changeTab(tab) {
 const details = computed(() => {
   return store.getAllSearchResults.find(detail => detail.volumeInfo.title.toLowerCase().replace(/[,\s]+|[,\s]+/g, '-') === route.params.id)
 })
+
+const bookId = details.value.id
+provide('bookId', bookId)
 </script>
 
 <template>
@@ -49,7 +52,9 @@ const details = computed(() => {
         :isbnCode="details.volumeInfo.industryIdentifiers"
         :description="details.volumeInfo.description"
       />
-      <component v-else :is="currentTab" />
+      <KeepAlive>
+        <component v-if="currentTab === BookReview" :is="currentTab" />
+      </KeepAlive>
     </div>
   </div>
 </template>
