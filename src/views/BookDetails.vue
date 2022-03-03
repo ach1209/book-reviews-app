@@ -16,13 +16,13 @@ const tabs = [
 
 function changeTab(tab) {
   currentTab.value = tab
-  // console.log(currentTab.value)
 }
 
 const details = computed(() => {
   return store.getAllSearchResults.find(detail => detail.volumeInfo.title.toLowerCase().replace(/[,\s]+|[,\s]+/g, '-') === route.params.id)
 })
 
+// Book id = the current book selected by the user
 const bookId = details.value.id
 provide('bookId', bookId)
 </script>
