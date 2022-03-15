@@ -7,10 +7,12 @@ const tabData = [
 </script>
 
 <template>
-  <div class="w-2/12 lg:h-48 p-4 bg-white rounded-lg shadow-sm">
-    <h2 class="text-center text-rose-600">My Books</h2>
+  <div class="w-2/12 lg:h-auto py-4 bg-white rounded-tl-sm rounded-bl-sm border-r">
     <ul>
-      <li v-for="tab in tabData" :key="tab.id">
+      <li 
+        v-for="tab in tabData" :key="tab.id"
+        class="h-10 px-4 flex items-center neutral-text-sm hover:rounded-sm hover:bg-blue-50 hover:text-blue-500"
+      >
         <router-link :to="tab.path">
           {{ tab.title }}
         </router-link>

@@ -19,3 +19,9 @@
 
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .neutral-text-sm {
+    @apply text-sm text-neutral-700 font-semibold;
+  }
+}
