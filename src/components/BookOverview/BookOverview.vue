@@ -1,6 +1,12 @@
 <script setup>
-import { computed } from 'vue'
+import { ref, inject, computed } from 'vue'
+import { bookCollections } from '../../store/bookCollections.js';
 import AppButton from '../AppButton/AppButton.vue'
+
+const store = bookCollections()
+const isButtonClicked = ref(false)
+const targetBookId = inject('bookId')
+const targetBookTitle = inject('bookTitle')
 
 const props = defineProps({
   rating: { type: Number, required: true, default: 0 },
@@ -18,6 +24,13 @@ const rating = computed(() => {
     return 'No rating available'
   }
 })
+
+const buttonText = computed(() => isButtonClicked.value ? 'Already in Collection' : 'Add to Collection')
+
+function addBook() {
+  store.addToCollection(targetBookId, targetBookTitle)
+  isButtonClicked.value = !isButtonClicked.value
+}
 </script>
 
 <template>
@@ -38,6 +51,9 @@ const rating = computed(() => {
     <p v-html="props.description"></p>    
   </div>
   <div class="flex justify-end mt-4">
-    <AppButton btnType="primary">Add to Collection</AppButton>
+    <AppButton 
+      btnType="primary" 
+      @click.once="addBook"
+    >{{ buttonText }}</AppButton>
   </div>
 </template>
