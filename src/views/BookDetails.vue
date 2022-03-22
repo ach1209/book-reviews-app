@@ -22,11 +22,13 @@ const details = computed(() => {
   return store.getAllSearchResults.find(detail => detail.volumeInfo.title.toLowerCase().replace(/[,\s]+|[,\s]+/g, '-') === route.params.id)
 })
 
-// Book id & title = the current book selected by the user
+// Provide data for current book
 const bookId = details.value.id
 const bookTitle = details.value.volumeInfo.title
+const bookImg = details.value.volumeInfo.imageLinks.thumbnail
 provide('bookId', bookId)
 provide('bookTitle', bookTitle)
+provide('bookImg', bookImg)
 </script>
 
 <template>

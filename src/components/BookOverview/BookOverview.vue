@@ -7,6 +7,7 @@ const store = bookCollections()
 const isButtonClicked = ref(false)
 const targetBookId = inject('bookId')
 const targetBookTitle = inject('bookTitle')
+const targetBookImg = inject('bookImg')
 
 const props = defineProps({
   rating: { type: Number, required: true, default: 0 },
@@ -25,11 +26,21 @@ const rating = computed(() => {
   }
 })
 
-const buttonText = computed(() => isButtonClicked.value ? 'Saved to Collections' : 'Add to Collections')
+const buttonText = computed(() => {
+  const text = ref('Add to Collections')
+  
+  store.getCollections.find(book => {
+    if (book.isInCollection && book.id === targetBookId) {
+      text.value = 'Saved to Collections'
+    }
+  })
+
+  return text.value
+})
 
 function addBook() {
-  store.addToCollection(targetBookId, targetBookTitle)
   isButtonClicked.value = !isButtonClicked.value
+  store.addToCollection(targetBookId, targetBookTitle, targetBookImg, isButtonClicked.value)
 }
 </script>
 
