@@ -28,11 +28,7 @@ export const bookReviewsList = defineStore({
     },
     decrementHelpfulCount(id) {
       const getCurrentBook = this.getBookReviews.find(book => book.bookId === id)
-      if (getCurrentBook.helpfulCount === 0) {
-        getCurrentBook.helpfulCount = 0
-      } else {
-        getCurrentBook.helpfulCount -= 1      
-      }
+      getCurrentBook.helpfulCount === 0 ? getCurrentBook.helpfulCount = 0 : getCurrentBook.helpfulCount -= 1
     }
   }
 })
