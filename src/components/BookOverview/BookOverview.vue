@@ -25,7 +25,7 @@ const rating = computed(() => {
   }
 })
 
-const buttonText = computed(() => isButtonClicked.value ? 'Already in Collection' : 'Add to Collection')
+const buttonText = computed(() => isButtonClicked.value ? 'Saved to Collections' : 'Add to Collections')
 
 function addBook() {
   store.addToCollection(targetBookId, targetBookTitle)
