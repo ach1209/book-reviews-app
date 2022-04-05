@@ -28,7 +28,7 @@ const currentBookReviews = computed(() => {
       ></UserReview>
     </div>
     <div v-else>
-      <div class="min-h-max py-4 bg-blue-100 rounded-md flex flex-col items-center justify-center">
+      <div class="no-item-block">
         <p class="text-center text-base">There are currently no reviews available for this book.</p>
         <p class="text-center text-base leading-9">Be the first to
           <span 

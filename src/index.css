@@ -18,6 +18,13 @@
 }
 
 @tailwind components;
+
+@layer components {
+  .no-item-block {
+    @apply min-h-max py-4 bg-blue-100 rounded-md flex flex-col items-center justify-center;
+  }  
+}
+
 @tailwind utilities;
 
 @layer utilities {

@@ -12,10 +12,12 @@ export const bookCollections = defineStore({
   },
   actions: {
     addToCollection(id, ...details) {
+      // check if book already exists before adding
       if (this.collectionsList.length > 0) {
-        this.collectionsList.find(entry => 
-          entry.id === id ? console.log('This book is already saved') : this.addBookDetails(id, ...details)
-        )
+        this.collectionsList.find(entry => {
+          if (entry.id === id) return null
+        })
+        this.addBookDetails(id, ...details)
       } else {
         this.addBookDetails(id, ...details)
       }
