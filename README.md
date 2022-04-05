@@ -1,6 +1,28 @@
 # Vue 3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This project was built using Vue 3 + Vite. 
+
+<strong>CSS Framework</strong>: Tailwind CSS V3 <br/>
+<strong>Routing Library</strong>: Vue Router 4 <br />
+<strong>State Management</strong>: Pinia
+
+## Instructions to Run a Local Environment
+
+Make sure you have the latest version of Node.js installed
+
+Clone the repository and then run: 
+
+```
+npm install
+```
+
+Once the dependencies are installed, run:
+
+```
+npm run dev
+```
+
+A localhost server will be available on ```http://localhost:3000/```
 
 ## Recommended IDE Setup
 
