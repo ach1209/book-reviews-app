@@ -1,8 +1,7 @@
 <script setup>
 const tabData = [
   { title: 'Home', id: 0, path: '/' },
-  { title: 'Collections', id: 1, path: '/collections' },
-  { title: 'Reviews', id: 2, path: '' }
+  { title: 'Collections', id: 1, path: '/collections' }
 ]
 </script>
 
