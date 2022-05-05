@@ -21,7 +21,7 @@
 
 @layer components {
   .no-item-block {
-    @apply min-h-max py-4 bg-blue-100 rounded-md flex flex-col items-center justify-center;
+    @apply min-h-max py-4 bg-violet-100 rounded-md flex flex-col items-center justify-center;
   }  
 }
 

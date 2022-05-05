@@ -15,5 +15,5 @@ function handleInput() {
     type="text" id="search" :value="props.modelValue"
     @input="$emit('update:modelValue', $event.target.value)"
     @keyup.native.enter="handleInput"
-    class="w-full h-12 px-2 rounded border border-blue-500 bg-blue-50 focus:outline-none neutral-text-sm" />
+    class="w-full h-12 px-2 rounded border border-violet-500 bg-violet-50 focus:outline-none neutral-text-sm" />
 </template>

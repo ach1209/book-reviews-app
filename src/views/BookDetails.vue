@@ -32,7 +32,7 @@ provide('bookImg', bookImg)
 </script>
 
 <template>
-  <div class="flex">
+  <div class="flex w-full">
     <div>
       <img :src="details.volumeInfo.imageLinks?.thumbnail" :alt="details.volumeInfo.title" />
     </div>

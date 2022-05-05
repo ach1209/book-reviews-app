@@ -33,7 +33,8 @@ const currentBookReviews = computed(() => {
         <p class="text-center text-base leading-9">Be the first to
           <span 
             @click="toggleForm(true)"
-            class="text-blue-600 hover:text-blue-700 cursor-pointer"
+            role="button"
+            class="text-violet-600 hover:text-violet-700 cursor-pointer"
           >write</span> a review!
         </p>
       </div>

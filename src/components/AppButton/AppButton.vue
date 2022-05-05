@@ -16,14 +16,14 @@ const props = defineProps({
 }
 
 .primary-btn {
-  @apply bg-blue-600 hover:bg-blue-700 text-white;
+  @apply bg-violet-600 hover:bg-violet-700 text-white;
 }
 
 .tab-btn {
-  @apply border-none shadow-none px-0 mr-4 last:mr-0 text-neutral-500 hover:text-blue-600 active:text-blue-600;
+  @apply border-none shadow-none px-0 mr-4 last:mr-0 text-neutral-500 hover:text-violet-600 active:text-violet-600;
 }
 
 .active {
-  @apply text-blue-600;
+  @apply text-violet-600;
 }
 </style>
