@@ -12,9 +12,9 @@ const tabData = [
     <ul class="mt-12 bg-white rounded-lg drop-shadow">
       <li 
         v-for="tab in tabData" :key="tab.id"
-        class="h-16 px-4 flex items-center neutral-text-lg hover:rounded-lg hover:bg-violet-50 hover:text-violet-500"
+        class="h-16 px-4 neutral-text-lg hover:rounded-lg hover:bg-violet-50 hover:text-violet-500"
       >
-        <router-link :to="tab.path">
+        <router-link :to="tab.path" class="w-full h-full flex items-center">
           {{ tab.title }}
         </router-link>
       </li>
