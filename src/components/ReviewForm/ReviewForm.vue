@@ -42,6 +42,7 @@ function hideReviewForm() {
       <AppButton btnType="primary">Submit</AppButton>
       <span 
         @click="hideReviewForm"
+        role="button"
         class="ml-4 text-violet-600 hover:text-violet-700 cursor-pointer"
       >Cancel</span>
     </div>
