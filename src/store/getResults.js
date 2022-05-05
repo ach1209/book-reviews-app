@@ -19,6 +19,9 @@ export const getResults = defineStore({
       } else {
         throw new Error('No matching results were found')
       }
+    },
+    resetSearchResults() {
+      if (this.searchResults) this.searchResults.length = 0
     }
   }
 })

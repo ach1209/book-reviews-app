@@ -14,6 +14,9 @@ const searchValue = () => {
   searchBooks.value = ''
 }
 const searchResults = computed(() => store.getAllSearchResults)
+
+// Clear results when loading into the view if they exist
+store.resetSearchResults()
 </script>
 
 <template>
