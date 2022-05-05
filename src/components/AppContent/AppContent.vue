@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-1 flex min-h-max ml-4 p-4">
+  <div class="flex-1 flex ml-4 p-4">
     <router-view v-slot="{ Component }">
       <Transition name="vert-slide" mode="out-in">
         <component :is="Component" />

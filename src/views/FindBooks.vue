@@ -20,7 +20,7 @@ store.resetSearchResults()
 </script>
 
 <template>
-  <div class="flex-none w-full">
+  <div class="w-full">
     <SearchBar v-model="searchBooks" @set-search-value="searchValue"></SearchBar>
     <ResultsCount :resultsCount="searchResults.length"></ResultsCount>
     <ResultsCard

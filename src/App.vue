@@ -5,7 +5,7 @@ import AppContent from './components/AppContent/AppContent.vue'
 
 <template>
   <div class="max-w-screen-xl min-h-screen mx-auto py-8 drop-shadow-md">
-    <div class="flex justify-around min-h-screen p-8 bg-zinc-100 rounded-xl">
+    <div class="flex min-h-screen p-8 bg-zinc-100 rounded-xl">
       <AppSideBar />
       <AppContent />
     </div>
