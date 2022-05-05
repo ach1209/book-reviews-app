@@ -30,9 +30,7 @@ const buttonText = computed(() => {
   const text = ref('Add to Collections')
   
   store.getCollections.find(book => {
-    if (book.isInCollection && book.id === targetBookId) {
-      text.value = 'Saved to Collections'
-    }
+    if (book.isInCollection && book.id === targetBookId) text.value = 'Saved to Collections'
   })
 
   return text.value

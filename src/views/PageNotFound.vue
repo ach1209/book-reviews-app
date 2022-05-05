@@ -1,4 +1,6 @@
 <template>
-  <h1 class="text-center text-rose-600">404 Page Not Found</h1>
-  <p class="text-center">Something went wrong! The page you were looking for could not be found.</p>
+  <div class="w-full">
+    <img class="w-1/2 mx-auto" src="../assets/undraw_page_not_found_re_e9o6.svg" alt="404 Page Not Found" />
+    <p class="mt-8 text-center text-xl">Something went wrong! The page you were looking for could not be found.</p>  
+  </div>
 </template>

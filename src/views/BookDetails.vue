@@ -19,7 +19,7 @@ function changeTab(tab) {
 }
 
 const details = computed(() => {
-  return store.getAllSearchResults.find(detail => detail.volumeInfo.title.toLowerCase().replace(/[,\s]+|[,\s]+/g, '-') === route.params.id)
+  return store.getAllSearchResults.find(detail => detail.id === route.params.id)
 })
 
 // Provide data for current book
@@ -32,7 +32,7 @@ provide('bookImg', bookImg)
 </script>
 
 <template>
-  <div class="flex w-full">
+  <div class="flex w-full mt-12">
     <div>
       <img :src="details.volumeInfo.imageLinks?.thumbnail" :alt="details.volumeInfo.title" />
     </div>
