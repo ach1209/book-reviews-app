@@ -23,6 +23,10 @@ const props = defineProps({
   @apply border-none shadow-none px-0 mr-4 last:mr-0 text-neutral-500 hover:text-violet-600 active:text-violet-600;
 }
 
+.disabled-btn {
+  @apply bg-slate-400 hover:bg-slate-400;
+}
+
 .active {
   @apply text-violet-600;
 }

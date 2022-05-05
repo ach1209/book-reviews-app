@@ -30,7 +30,10 @@ const buttonText = computed(() => {
   const text = ref('Add to Collections')
   
   store.getCollections.find(book => {
-    if (book.isInCollection && book.id === targetBookId) text.value = 'Saved to Collections'
+    if (book.isInCollection && book.id === targetBookId) {
+      text.value = 'Already saved to collections'
+      isButtonClicked.value = true
+    }
   })
 
   return text.value
@@ -62,7 +65,9 @@ function addBook() {
   <div class="flex justify-end mt-4">
     <AppButton 
       btnType="primary" 
-      @click.once="addBook"
+      @click="addBook"
+      :disabled="isButtonClicked"
+      :class="{ 'disabled-btn': isButtonClicked }"
     >{{ buttonText }}</AppButton>
   </div>
 </template>
