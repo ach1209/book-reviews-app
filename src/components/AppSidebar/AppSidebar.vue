@@ -1,16 +1,18 @@
 <script setup>
 const tabData = [
   { title: 'Home', id: 0, path: '/' },
-  { title: 'Collections', id: 1, path: '/collections' }
+  { title: 'Find Books', id: 1, path: '/find-books' },
+  { title: 'Collections', id: 2, path: '/collections' }
 ]
 </script>
 
 <template>
-  <div class="w-2/12 lg:h-auto py-4 bg-white rounded-tl-sm rounded-bl-sm border-r">
-    <ul>
+  <div class="w-3/12 lg:h-auto py-4">
+    <h1 class="text-neutral-600 text-xl">Book Reviews App</h1>
+    <ul class="mt-12 bg-white rounded-lg drop-shadow">
       <li 
         v-for="tab in tabData" :key="tab.id"
-        class="h-10 px-4 flex items-center neutral-text-sm hover:rounded-sm hover:bg-blue-50 hover:text-blue-500"
+        class="h-16 px-4 flex items-center neutral-text-lg hover:rounded-lg hover:bg-violet-50 hover:text-violet-500"
       >
         <router-link :to="tab.path">
           {{ tab.title }}

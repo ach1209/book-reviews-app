@@ -3,7 +3,26 @@ import { defineStore } from 'pinia'
 export const bookCollections = defineStore({
   id: 'collections',
   state: () => ({
-    collectionsList: []
+    collectionsList: [
+      {
+        id: '23N1_vwJlVUC',
+        title: 'The Adventures of Sherlock Holmes',
+        image: 'http://books.google.com/books/content?id=vb5IAwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+        isInCollection: true,
+      },
+      {
+        id: 'yl4dILkcqm4C',
+        title: 'The Lord Of The Rings',
+        image: 'http://books.google.com/books/content?id=yl4dILkcqm4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
+        isInCollection: true,
+      },
+      {
+        id: '_Fw-xwEACAAJ',
+        title: 'The Last Wish',
+        image: 'http://books.google.com/books/content?id=_Fw-xwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api',
+        isInCollection: true,
+      },
+    ]
   }),
   getters: {
     getCollections() {

@@ -3,6 +3,7 @@ import Home from './views/Home.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
+  { path: '/find-books', name: 'Find Books', component: ()=>import('./views/FindBooks.vue') },
   { path: '/collections', name: 'Collections', component: ()=>import('./views/Collections.vue') },
   { path: '/book/:id', name: 'Book', component: ()=>import('./views/BookDetails.vue'), params: true },
   { path: '/:pathMatch(.*)', name: '404', component: ()=>import('./views/PageNotFound.vue') } 

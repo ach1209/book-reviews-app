@@ -1,33 +1,17 @@
 <script setup>
-import { ref, computed } from 'vue'
-import { getResults } from '../store/getResults.js'
-import AppButton from '../components/AppButton/AppButton.vue'
-import ResultsCard from '../components/ResultsCard/ResultsCard.vue'
-import ResultsCount from '../components/ResultsCount/ResultsCount.vue'
-import SearchBar from '../components/SearchBar/SearchBar.vue'
+import { bookCollections } from '../store/bookCollections.js'
 
-const searchBooks = ref('')
-const store = getResults()
-
-const searchValue = () => {
-  store.fetchSearchResults(searchBooks.value)
-  searchBooks.value = ''
-}
-const searchResults = computed(() => store.getAllSearchResults)
+const store = bookCollections()
 </script>
 
 <template>
-  <SearchBar v-model="searchBooks" @set-search-value="searchValue"></SearchBar>
-  <ResultsCount :resultsCount="searchResults.length"></ResultsCount>
-  <ResultsCard
-    v-for="result in searchResults" :key="result.id"
-    :title="result.volumeInfo.title"
-    :thumbnail="result.volumeInfo.imageLinks?.smallThumbnail"
-    :description="result.searchInfo?.textSnippet"
-    class="mb-4"
-  >
-    <router-link :to="{ name: 'Book', params: { id: result.volumeInfo.title.toLowerCase().replace(/[,\s]+|[,\s]+/g, '-') } }">
-      <AppButton btnType="primary" class="mt-auto">See More Details</AppButton>  
-    </router-link>
-  </ResultsCard>
+  <div class="self-center flex">
+    <div class="flex-1">
+      <h2 class="text-3xl text-neutral-700 capitalize">You have read <span class="text-violet-500">{{ store.getCollections.length }}</span> books</h2>
+      <router-link to="/find-books" class="text-lg leading-10 text-violet-500 hover:text-violet-700">Find More Books to Read</router-link>
+    </div>
+    <div class="flex-1">
+      <img src="../assets/undraw_book_lover_re_rwjy.svg" alt="Reading books" />
+    </div>    
+  </div>
 </template>

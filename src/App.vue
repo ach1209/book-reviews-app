@@ -1,18 +1,13 @@
 <script setup>
 import AppSideBar from './components/AppSidebar/AppSidebar.vue'
+import AppContent from './components/AppContent/AppContent.vue'
 </script>
 
 <template>
-  <div class="max-w-screen-lg min-h-screen mx-auto py-8 drop-shadow">
-    <div class="flex justify-around">
+  <div class="max-w-screen-xl min-h-screen mx-auto py-8 drop-shadow-md">
+    <div class="flex justify-around min-h-screen p-8 bg-zinc-100 rounded-xl">
       <AppSideBar />
-      <div class="flex-1 min-h-max p-4 bg-white rounded-tr-sm rounded-br-sm">
-        <div class="mb-4">
-          <h1 class="text-neutral-600">Book Reviews App</h1>
-          <p>Find your favorite books and share your thoughts with other readers</p>          
-        </div>
-        <router-view></router-view>
-      </div>      
+      <AppContent />
     </div>
   </div>
 </template>
