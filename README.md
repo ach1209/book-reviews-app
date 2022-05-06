@@ -4,7 +4,8 @@ This project was built using Vue 3 + Vite.
 
 <strong>CSS Framework</strong>: Tailwind CSS V3 <br/>
 <strong>Routing Library</strong>: Vue Router 4 <br />
-<strong>State Management</strong>: Pinia
+<strong>State Management</strong>: Pinia <br />
+Images from [unDraw](https://undraw.co/illustrations)
 
 ## Instructions to Run a Local Environment
 
