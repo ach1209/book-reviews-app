@@ -20,11 +20,15 @@ const props = defineProps({
 }
 
 .tab-btn {
-  @apply border-none shadow-none px-0 mr-4 last:mr-0 text-neutral-500 hover:text-violet-600 active:text-violet-600;
+  @apply shadow-none px-0 mr-4 last:mr-0 text-neutral-500 hover:text-violet-600 active:text-violet-600;
 }
 
 .disabled-btn {
   @apply bg-slate-400 hover:bg-slate-400;
+}
+
+.wide-btn {
+  @apply w-64 h-12 px-6 bg-white hover:bg-violet-50 text-neutral-700 hover:text-violet-500 text-left text-sm truncate drop-shadow shadow-none;
 }
 
 .active {
