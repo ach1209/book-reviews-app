@@ -8,7 +8,7 @@ const tabData = [
 <template>
   <div class="w-3/12 lg:h-auto py-4">
     <router-link to="/">
-      <h1 class="text-violet-600 hover:text-violet-500 text-xl">Book Reviews App</h1>
+      <h1 class="text-violet-600 hover:text-violet-500 text-xl">Books App</h1>
     </router-link>
     <ul class="mt-12 bg-white rounded-lg drop-shadow">
       <li 
